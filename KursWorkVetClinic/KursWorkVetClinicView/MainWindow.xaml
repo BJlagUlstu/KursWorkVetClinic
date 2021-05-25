@@ -1,0 +1,28 @@
+﻿<Window x:Class="KursWorkVetClinicView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Главное меню" Height="450" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Height="25" VerticalAlignment="Top" ContextMenuOpening="ReportItem_Click">
+            <MenuItem x:Name="AnimalsItem" Margin="3" Header="Животные" Click="AnimalsItem_Click"/>
+            <MenuItem x:Name="PurchasesItem" Header="Покупки" Click="PurchasesItem_Click"></MenuItem>
+            <MenuItem x:Name="VisitsItem" Header="Посещения" Click="VisitsItem_Click"></MenuItem>
+            <MenuItem x:Name="MedicinesBindingItem" Header="Привязка лекарств" Click="MedicinesBindingItem_Click"></MenuItem>
+            <MenuItem x:Name="GetListServicesItem" Header="Получение списка услуг" Click="GetListServicesItem_Click"></MenuItem>
+            <MenuItem x:Name="ReportItem" Header="Отчет" Click="ReportItem_Click"/>
+            <MenuItem x:Name="PersonalData" Header="Личные данные" Click="PersonalData_Click"/>
+            <MenuItem x:Name="StatisticsItem" Foreground="Red" Header="Статистика" Click="StatisticsItem_Click"></MenuItem>
+        </Menu>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" Background="Aqua">
+            <Image Source="Image/logo.png"></Image>
+        </Border>
+    </Grid>
+</Window>

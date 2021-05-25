@@ -1,0 +1,89 @@
+﻿<Window x:Class="KursWorkVetClinicView.Visit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Посещение" Height="330" Width="1000" Loaded="Visit_Load">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="225"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="70"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.FontWeight="Bold">Данные о посещении:</Label>
+                <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.FontWeight="Bold">Список животных в посещении:</Label>
+                <Label Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.FontWeight="Bold">Список всех животных:</Label>
+                <Label Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.FontWeight="Bold">Список выбранных услуг:</Label>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="225"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Margin="5,5,5,5" Padding="3,3,3,3"  BorderBrush="Black" BorderThickness="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Grid.Row="0" Margin="0,10,0,10" Padding="3,3,3,3" VerticalAlignment="Center">Пользователь:</Label>
+                        <Label x:Name="UserLabel" Grid.Column="1" Grid.Row="0" Margin="0,10,0,10" Padding="3,3,3,3" VerticalAlignment="Center"></Label>
+                        <Label Grid.Column="0" Grid.Row="1" Margin="0,10,0,10" Padding="3,3,3,3" VerticalAlignment="Center">Дата посещения:</Label>
+                        <DatePicker x:Name="DateVisitDatePicker" Grid.Column="1" Grid.Row="1" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="10,10,10,10" Padding="3,3,3,3"></DatePicker>
+                    </Grid>
+                </Border>
+                <Border Grid.Column="1" Margin="5,5,5,5" Padding="3,3,3,3"  BorderBrush="Black" BorderThickness="1">
+                    <ListBox x:Name="SelectedAnimalsListBox">
+                    </ListBox>
+                </Border>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="RefundButton" Grid.Row="0" Margin="10,10,10,10" Padding="-5,0,0,0" FontFamily="Marlett" FontSize="50" Content="4" Click="RefundButton_Click"/>
+                    <Button x:Name="AddButton" Grid.Row="1" Margin="10,10,10,10" Padding="0,0,0,0" FontFamily="Marlett" FontSize="50" Content="3" Click="AddButton_Click"></Button>
+                </Grid>
+                <Border Grid.Column="3" Margin="5,5,5,5" Padding="3,3,3,3"  BorderBrush="Black" BorderThickness="1">
+                    <ListBox x:Name="CanSelectedAnimalsListBox">
+                    </ListBox>
+                </Border>
+                <Border Grid.Column="4" Margin="5,5,5,5" Padding="3,3,3,3"  BorderBrush="Black" BorderThickness="1">
+                    <ListBox x:Name="SelectedServicesListBox" IsEnabled="False">
+                    </ListBox>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SaveButton" Grid.Column="1" Margin="10,0,10,10" Padding="3,3,3,3" Click="SaveButton_Click">Сохранить</Button>
+                <Button x:Name="CancelButton" Grid.Column="2" Margin="10,0,10,10" Padding="3,3,3,3" Click="CancelButton_Click">Отмена</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

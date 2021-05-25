@@ -1,0 +1,40 @@
+﻿<Window x:Class="KursWorkVetClinicView.MedicineBinding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Привязка лекарств" Height="250" Width="400">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Покупка:</Label>
+            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Лекарство:</Label>
+            <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Кол-во:</Label>
+            <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Сумма:</Label>
+            <ComboBox x:Name="SelectedPurchaseComboBox" Grid.Row="0" Grid.Column="1" Margin="10" SelectionChanged="SelectedPurchaseComboBox_SelectionChangeCommitted"></ComboBox>
+            <ComboBox x:Name="SelectedMedicineComboBox" Grid.Row="1" Grid.Column="1" Margin="10"></ComboBox>
+            <TextBox x:Name="CountTextBox" Grid.Row="2" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" TextChanged="Count_Changed"></TextBox>
+            <TextBox x:Name="SumTextBox" Grid.Row="3" Grid.Column="1" Margin="10" VerticalContentAlignment="Center"></TextBox>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Margin="15,0,15,10" Padding="3" Click="SaveButton_Click">Сохранить</Button>
+                <Button Grid.Column="1" Margin="15,0,15,10" Padding="3" Click="CancelButton_Click">Отмена</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

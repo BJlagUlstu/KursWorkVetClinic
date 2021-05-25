@@ -1,0 +1,31 @@
+﻿<Window x:Class="KursWorkVetClinicView.Purchases"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Покупки" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Margin="5,5,5,5" Padding="3,3,3,3" BorderBrush="Black" BorderThickness="1">
+            <DataGrid x:Name="dataGridView" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="Пользователь" Binding="{Binding Path=Username}" Width="*"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum}" Width="120"/>
+                    <DataGridTextColumn Header="Дата покупки" Binding="{Binding Path=DatePayment, StringFormat=dd.MM.yyyy HH:mm}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button Margin="10,10,10,10" Padding="3,3,3,3" Click="AddButton_Click">Добавить</Button>
+            <Button Margin="10,10,10,10" Padding="3,3,3,3" Click="ChangeButton_Click">Изменить</Button>
+            <Button Margin="10,10,10,10" Padding="3,3,3,3" Click="DeleteButton_Click">Удалить</Button>
+            <Button Margin="10,10,10,10" Padding="3,3,3,3" Click="UpdateButton_Click">Обновить</Button>
+        </StackPanel>
+    </Grid>
+</Window>

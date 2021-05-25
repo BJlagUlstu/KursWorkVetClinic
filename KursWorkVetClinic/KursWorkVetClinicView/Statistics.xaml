@@ -1,0 +1,31 @@
+﻿<Window x:Class="KursWorkVetClinicView.Statistics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Статистика" Height="150" Width="350">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" VerticalAlignment="Center">Выбор диаграммы:</Label>
+                <ComboBox Grid.Column="1" x:Name="SelectedStaticsComboBox" VerticalAlignment="Center" Margin="15">
+                    <ComboBoxItem>Животные</ComboBoxItem>
+                    <ComboBoxItem>Посещения и Покупки</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button x:Name="CreateButton" VerticalAlignment="Center" Width="120" Padding="5" Click="CreateButton_Click">Создать</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

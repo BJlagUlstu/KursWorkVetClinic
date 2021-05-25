@@ -1,0 +1,54 @@
+﻿<Window 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" x:Class="KursWorkVetClinicView.DiagramsByVisitsAndPurchases"
+        mc:Ignorable="d"
+        Title="Диаграммы по посещениям и покупкам" Height="800" Width="1400" Loaded="Diagram_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition Width="140"></ColumnDefinition>
+                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Margin="5,10,0,10" Padding="3,3,3,3">C</Label>
+                <DatePicker x:Name="dataFromDataPicker" Grid.Column="1" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="10,10,10,10" Padding="3,3,3,3"></DatePicker>
+                <Label Grid.Column="2" Margin="5,10,0,10" Padding="3,3,3,3">до</Label>
+                <DatePicker x:Name="dataToDataPicker" Grid.Column="3" IsDropDownOpen="False" SelectedDateFormat="Short" Margin="10,10,10,10" Padding="3,3,3,3"></DatePicker>
+                <Label Grid.Column="4" VerticalAlignment="Center">Диаграмма:</Label>
+                <ComboBox x:Name="SelectedDiagramComboBox" Grid.Column="5" Margin="10,13,10,13">
+                    <ComboBoxItem>Посещения</ComboBoxItem>
+                    <ComboBoxItem>Покупки</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="ButtonShow" Grid.Column="6" Margin="10,10,10,10" Padding="3,3,3,3" Click="ButtonShow_Click">Сформировать</Button>
+            </Grid>
+            <Border Grid.Row="1" Margin="5,5,5,5" Padding="3,3,3,3" BorderBrush="Black" BorderThickness="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGridView" AutoGenerateColumns="False" Grid.Column="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="DataEventDataGridTextColumn" Header="Дата" Binding="{Binding Path=Data}" Width="*"/>
+                            <DataGridTextColumn x:Name="AmountPerDayDataGridTextColumn" Header="Кол-во событий за день" Binding="{Binding Path=AmountPerDay}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Wpf:CartesianChart x:Name="cartesianChart" Grid.Column="1" Margin="10, 10, 20, 30" Padding="10, 10, 20, 30" FontSize="14"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

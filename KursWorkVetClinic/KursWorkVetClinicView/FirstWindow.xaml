@@ -1,0 +1,41 @@
+﻿<Window x:Class="KursWorkVetClinicView.FirstWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursWorkVetClinicView"
+        mc:Ignorable="d"
+        Title="Ветклиника «Айболит»" Height="335" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Background="#B5CBEF" Grid.RowSpan="3"></Grid>
+            <TextBlock HorizontalAlignment="Right" Margin="10,5" FontSize="14">
+                <Hyperlink TextDecorations="" Foreground="#3709de" Click="Login_Click">Войти</Hyperlink> 
+                или
+                <Hyperlink TextDecorations="" Foreground="#3709de" Click="CreateAccount_Click">Создать аккаунт</Hyperlink>
+            </TextBlock>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" FontSize="34" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold">Курсовая работа</TextBlock>
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2">
+                <Border BorderBrush="Black" BorderThickness="3">
+                    <Image Source="Image/flag.png" Width="170" Height="170"></Image>
+                </Border>
+            </Label>
+        </Grid>
+        <TextBlock Text="© Ветклиника «Айболит» - Все права защищены" Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
+    </Grid>
+</Window>
